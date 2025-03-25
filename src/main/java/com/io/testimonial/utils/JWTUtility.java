@@ -17,11 +17,11 @@ public class JWTUtility {
 
     private String SECRET_KEY = "EWdsaQKLds43D%$(#)%#n!!%(#!+KSDdsaU8RdasO23341#!@$#@!$dsads1NVEJT5RWsaf";
 
-      private SecretKey getSigningKey() {
+    private SecretKey getSigningKey() {
         return Keys.hmacShaKeyFor(SECRET_KEY.getBytes());
     }
 
-    public String extractUsername(String token) {
+    public String extractEmail(String token) {
         Claims claims = extractAllClaims(token);
         return claims.getSubject();
     }
